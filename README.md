@@ -21,7 +21,6 @@
 TIL/
 ├── python/
 ├── sql/
-├── machine-learning/
 ├── etc/
 └── README.md
 ```
