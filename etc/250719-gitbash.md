@@ -7,7 +7,7 @@
 
 # 궁금증 1 - bash
 
-![2025-07-19-22-38-53-image.png](../imgs/2025-07-19-22-38-53-image.png)
+<img src="../imgs/2025-07-19-22-38-53-image.png" title="" alt="2025-07-19-22-38-53-image.png" width="420">
 
 예전에 clone했던 WD는 (main)으로 뜨고
 
@@ -32,43 +32,41 @@
 
 1. github에서 branch명을 main -> master로 변경
 
-![2025-07-19-22-48-25-image.png](../imgs/2025-07-19-22-48-25-image.png)
+<img src="../imgs/2025-07-19-22-48-25-image.png" title="" alt="2025-07-19-22-48-25-image.png" width="333">
 
-![2025-07-19-22-49-03-image.png](../imgs/2025-07-19-22-49-03-image.png)
+<img src="../imgs/2025-07-19-22-49-03-image.png" title="" alt="2025-07-19-22-49-03-image.png" width="332">
 
-![2025-07-19-22-50-50-image.png](../imgs/2025-07-19-22-50-50-image.png)
+<img src="../imgs/2025-07-19-22-50-50-image.png" title="" alt="2025-07-19-22-50-50-image.png" width="337">
 
-![2025-07-19-22-50-19-image.png](../imgs/2025-07-19-22-50-19-image.png)
+<img src="../imgs/2025-07-19-22-50-19-image.png" title="" alt="2025-07-19-22-50-19-image.png" width="337">
 
 2. 기존 working directory(Study) 지우고 다시 clone하기
    
    1. ...근데 왜 안 지워질까?
    
-   ![2025-07-19-22-55-23-image.png](../imgs/2025-07-19-22-55-23-image.png)
-   
-   
-   
-   GPT 왈: 현재 상황은 `rm -r Study/` 명령어를 통해 디렉토리를 삭제하려 했으나, 해당 디렉토리 내 일부 파일이 **"write-protected (쓰기 금지)"** 상태라서 삭제 전에 **하나하나 'y'로 삭제 여부를 물어보고 있는** 것입니다.
-   
-   ---
-   
-   🔧 해결 방법: 강제로 묻지 않고 삭제하기
-   
-   `rm -rf Study/`
-   
-   - `-r` : 재귀적으로 디렉토리 삭제
-   
-   - `-f` : 강제 삭제 (`force`) → **쓰기 금지 파일이 있어도 묻지 않고 삭제**
-   3. 오케이.
-   ![2025-07-19-23-04-30-image.png](../imgs/2025-07-19-23-01-29-image.png)
-   
-   4. 다시 clone
-   
-   ![2025-07-19-23-04-30-image.png](../imgs/2025-07-19-23-04-30-image.png)
+   <img src="../imgs/2025-07-19-22-55-23-image.png" title="" alt="2025-07-19-22-55-23-image.png" width="380">
 
-3. 완료!
+   GPT 왈: 현재 상황은 `rm -r Study/` 명령어를 통해 디렉토리를 삭제하려 했으나, 해당 디렉토리 내 일부 파일이 **"write-protected (쓰기 금지)"** 상태라서 삭제 전에 **하나하나 'y'로 삭제 여부를 물어보고 있는** 것입니다.
+
+   ---
+
+   🔧 해결 방법: 강제로 묻지 않고 삭제하기
+
+   `rm -rf Study/`
+
+- `-r` : 재귀적으로 디렉토리 삭제
+
+- `-f` : 강제 삭제 (`force`) → **쓰기 금지 파일이 있어도 묻지 않고 삭제**
+3. 오케이.
+   <img src="../imgs/2025-07-19-23-01-29-image.png" title="" alt="2025-07-19-23-04-30-image.png" width="259">
+
+4. 다시 clone
    
-   ![2025-07-19-23-05-06-image.png](../imgs/2025-07-19-23-05-06-image.png)
+   <img src="../imgs/2025-07-19-23-04-30-image.png" title="" alt="2025-07-19-23-04-30-image.png" width="380">
+
+3. master로 변경 완료!
+   
+   <img src="../imgs/2025-07-19-23-05-06-image.png" title="" alt="2025-07-19-23-05-06-image.png" width="324">
 
 ## 더 알아볼 점
 
@@ -84,7 +82,7 @@
 
 - 색깔차이..?
   
-  ![2025-07-19-23-09-48-image.png](../imgs/2025-07-19-23-09-48-image.png)
+  <img src="../imgs/2025-07-19-23-09-48-image.png" title="" alt="2025-07-19-23-09-48-image.png" width="336">
 
 - 
 
@@ -101,6 +99,6 @@
   | Git Bash 등에서 사용 가능 여부 | O                       | O                           |
 
 - window의 cmd에서 둘을 찍어보면 차이를 확실히 알 수 있다.
-  ![2025-07-19-23-14-06-image.png](../imgs/2025-07-19-23-14-06-image.png)
+  <img src="../imgs/2025-07-19-23-14-06-image.png" title="" alt="2025-07-19-23-14-06-image.png" width="380">
 
 - git bash에선 `ls` 가 여러모로 편하고 좋아보인다.
