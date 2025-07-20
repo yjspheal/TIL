@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>기억력 게임 - SSAFY</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; }
+    h1 { margin-top: 20px; }
+    #game { display: grid; grid-template-columns: repeat(3, 100px); gap: 10px; justify-content: center; margin-top: 30px; }
+    .card {
+      width: 100px; height: 100px;
+      background: #add8e6; display: flex;
+      justify-content: center; align-items: center;
+      font-weight: bold; font-size: 16px;
+      cursor: pointer; border-radius: 10px;
+    }
+    .flipped { background: #fff; cursor: default; }
+    #timer { margin-top: 20px; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <h1>기억력 게임</h1>
+  <div id="timer">⏱ 시간: 0초</div>
+  <div id="game"></div>
+
+  <script>
+    const centerText = "14기 파이팅";
+    const goals = ["알고리즘 능력 향상", "프로젝트 경험 쌓기", "협업 능력 기르기", "백엔드 심화 학습"];
+    let cards = [...goals, ...goals];
+    cards.sort(() => Math.random() - 0.5);
+
+    let board = [];
+    let first = null, second = null;
+    let matched = 0;
+    let startTime = Date.now();
+
+    const updateTime = () => {
+      const now = Date.now();
+      const sec = Math.floor((now - startTime) / 1000);
+      document.getElementById("timer").innerText = `⏱ 시간: ${sec}초`;
+    };
+    setInterval(updateTime, 1000);
+
+    const game = document.getElementById("game");
+    for (let i = 0; i < 9; i++) {
+      const div = document.createElement("div");
+      div.className = "card";
+      if (i === 4) {
+        div.textContent = centerText;
+        div.classList.add("flipped");
+        div.style.background = "#ffd700";
+      } else {
+        div.dataset.index = i;
+        div.textContent = "";
+        div.addEventListener("click", flip);
+      }
+      board.push(div);
+      game.appendChild(div);
+    }
+
+    function flip(e) {
+      const card = e.target;
+      const idx = card.dataset.index;
+      if (card.classList.contains("flipped") || second) return;
+
+      card.classList.add("flipped");
+      card.textContent = cards[idx < 4 ? idx : idx - 1];
+
+      if (!first) {
+        first = card;
+      } else {
+        second = card;
+        if (first.textContent === second.textContent) {
+          matched += 1;
+          first = second = null;
+          if (matched === 4) {
+            setTimeout(() => {
+              alert(`🎉 성공! 총 소요 시간: ${Math.floor((Date.now() - startTime)/1000)}초`);
+            }, 200);
+          }
+        } else {
+          setTimeout(() => {
+            first.classList.remove("flipped");
+            second.classList.remove("flipped");
+            first.textContent = "";
+            second.textContent = "";
+            first = second = null;
+          }, 700);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
