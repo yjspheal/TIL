@@ -131,10 +131,14 @@ pprint(data)
 ```
 
 ## 주의사항
-- `pprint`는 최대 5개의 위치 인자를 받을 수 있음
-  - 위치 인자 1: object 
-  - 위치 인자 2: stream (실제로 파일 같은 객체여야 함)
-  - 위치 인자 3: indent (int('c') 불가 → 에러)
-  - 위치 인자 4: width 
-  - 위치 인자 5: depth
-- 따라서 print처럼 `pprint(a, b, c, d)` 하다가 에러날 수 있으니 주의
+- `pprint`는 최대 5개의 위치 인자를 받을 수 있음  
+  1. `object` (출력할 대상, type: object)  
+  2. `stream` (출력할 파일‑유사 객체, default: None)  
+  3. `indent` (들여쓰기 정도, default: 1, type: int)  
+  4. `width` (한 줄 최대 문자 수, default: 80, type: int)  
+  5. `depth` (중첩 출력 깊이 제한, default: None, type: int)  
+- **키워드 전용 인자**  
+  - `compact` (가능한 항목을 한 줄에 밀집 출력할지 여부, default: False, type: bool)  
+  - `sort_dicts` (딕셔너리 키를 정렬하여 출력할지 여부, default: True, type: bool)  
+- 따라서 `pprint(a, b, c, d)` 같은 위치 인자 호출 시 타입 오류에 주의할 것  
+
