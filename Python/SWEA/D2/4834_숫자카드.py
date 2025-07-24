@@ -1,5 +1,6 @@
 # 4834. [파이썬 S/W 문제해결 기본] 1일차 - 숫자 카드
 
+
 # import sys
 # sys.stdin = open("sample_input.txt", "r")
 

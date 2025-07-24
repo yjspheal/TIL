@@ -1,5 +1,6 @@
 # 4828. [파이썬 S/W 문제해결 기본] 1일차 - min max
 
+
 # import sys
 # sys.stdin = open("sample_input.txt", "r")
 
