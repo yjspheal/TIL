@@ -1,5 +1,6 @@
 # 
 
+# 온라인 저지에서는 stdin 사용 불가하므로 주석처리
 # import sys
 # sys.stdin = open("sample_input.txt", "r")
 
