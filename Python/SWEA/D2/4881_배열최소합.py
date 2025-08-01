@@ -4,80 +4,66 @@
 # import sys
 # sys.stdin = open("sample_input.txt", "r")
 
-# import copy
+"""
+IDEA
+- NxN행렬에서 행 열 안 겹치게 pick할 수 있는 경우를 모두 구한다
+- 즉 경우의 수는 N!
+- 해당 경우를 모두 돌면서, min_sum값을 넘어서는 순간 break한다
+- 2초 안 넘지 않을까?
+- 넘네...어카지?
+"""
 
-# def remove_arr_line(arr, col, row):
-#     """
-#     어떤 arr와 x, y 좌표가 들어오면, 해당 라인을 제거한 new_arr를 return하는 함수
-
-#     Args:
-#         arr (list): 어떤 행렬
-#         col (int): 제거할 열, 즉 x값
-#         row (int): 제거할 행, 즉 y값
-    
-#     Return:
-#         List : arr에서 x, y 라인 제거한 새로운 arr
-#     """
-
-#     # 행 삭제
-#     arr = arr.remove(row)
-
-#     # 열 삭제
-#     for r in arr:
-#         del r[col]
-
-#     return arr
-
-
-# def search_min_sum(arr, n):
-#     global min_sum
-#     """
-#     NxN 행렬 arr에 대해, 한줄에 하나씩 숫자를 골라 최소합을 구하여 return하는 함수
-#     단, 세로줄에서도 하나만을 골라야 함.
-
-#     Args:
-#         arr (list): nxn 행렬
-#         n (int): n
-
-#     Returns:
-#         int: 가로줄 세로줄 겹치지 않는 최소합
-#     """
-
-#     arr_rm = copy.deepcopy(arr)
-    
-#     # 첫줄에서 원소 하나씩 순회하며 
-#     for x in range(n):
-#         current_sum = 0
-#         for j in range(n):
-#             arr_rm = remove_arr_line(arr_rm)
-#             new_n = len(arr_rm)
-#             if new_n == 1:     # 다 없어져 원소가 하나만 남았다면
-#                 return arr, arr_rm[0][0]
-#             else:
-#                 return search_min_sum(arr_rm, new_n)
-
-
-
-
+# 구글링해서 찾았음!!
+import itertools
 
 T = int(input())
 # 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
 for tc in range(1, T + 1):
-    N = int(input())
-
-    matrix = [] # NxN행렬을 저장할 리스트
-    # N줄에 걸쳐 10보다 작은 자연수가 주어짐
+    N = int(input())# NxN 행렬의 N을 input
+    
+    # 숫자를 싹 순서대로 담은 arr
+    arr = []
     for _ in range(N):
-        row = list(map(int, input().split()))
+        # 들어오는 숫자 리스트를 하여 arr에 추가
+        nums = tuple(map(int, input().split()))
 
-    #     # 모든 줄을 matrix에 추가
-    #     matrix.append(row)
+        arr.append(nums)
 
-    # # 최소합의 초기값을 sum(diagonal)로 set
-    # min_sum = sum(matrix[i][i] for i in range(N))
+    """
+    한줄로 받았으므로, 선택할 수 있는 인덱스는 다음과 같다
+    한 줄의 i
+    다음 줄의 j(i가 아닌)
+    그 다음 줄의 k(i, j가 아닌)
 
-    # # 최소합 계산
-    # result = search_min_sum(matrix, N)
-        
-    # 출력
-    print(f'#{tc} ')
+    그렇다면?
+    i, j, k ...는 0 ~ N-1
+
+    즉 0부터 N-1까지 싹 순열시키면 됨
+
+    순열시키는 모듈이 있음
+    """
+    # 012345..N-1 문자열 만들기
+    N_list = ''.join([str(_) for _ in range(N)])
+    # 순열하기
+    lineups = map(''.join, itertools.permutations(N_list))
+    
+    # 최저합 ㅊ초기화
+    min_sum = 10000
+
+    # 순열 결과가 하나씩 나옴
+    for lineup in lineups:
+        current_sum = 0
+        # i번쨰 줄에서 택할 것들을 하나씩 더함
+        for i in range(N):
+            current_num = arr[i][int(lineup[i])]
+            current_sum += current_num
+
+            # 만약 이번 라인업에서 최저 sum을 이미 넘겨버렸다면 다음으로
+            if current_sum > min_sum:
+                break
+
+        if current_sum < min_sum:
+            min_sum = current_sum
+
+
+    print(f'#{tc} {min_sum}')
