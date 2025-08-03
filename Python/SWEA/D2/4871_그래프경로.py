@@ -8,7 +8,7 @@ T = int(input())       # 테스트 케이스 개수 입력
 for tc in range(1, T + 1):
     V, E = map(int, input().split())        # 노드 개수, 간선 개수
     
-    # 빈 리스트 V+1개를 원소로 갖음
+    # 빈 리스트 V+1개를 원소로 가짐
     # 각 노드가 어던 노드와 이어져있는지 표현
     link = [[] for _ in range(V+1)]        
 
@@ -29,9 +29,9 @@ for tc in range(1, T + 1):
     def dfs(node):
         global answer
         
-        # 만약 현재 노드가 도착노드 G라면, 경로 찾음!
+        # 만약 현재 노드가 도착노드 G라면, 경로 찾은것
         if node == G:
-            answer = 1                      # answer 값을 1로 바꿔서 표시
+            answer = 1                      
             return
         visited[node] = True                # 현재 노드 방문 처리
 
