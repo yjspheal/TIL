@@ -4,66 +4,39 @@
 # import sys
 # sys.stdin = open("sample_input.txt", "r")
 
-"""
-IDEA
-- NxN행렬에서 행 열 안 겹치게 pick할 수 있는 경우를 모두 구한다
-- 즉 경우의 수는 N!
-- 해당 경우를 모두 돌면서, min_sum값을 넘어서는 순간 break한다
-- 2초 안 넘지 않을까?
-- 넘네...어카지?
-"""
 
-# 구글링해서 찾았음!!
-import itertools
-
-T = int(input())
-# 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
-for tc in range(1, T + 1):
-    N = int(input())# NxN 행렬의 N을 input
+def sum_down(row, current_sum):
+    # 계속 update할 최소합
+    global min_sum
+    # 지금까지 더한 합이 이미 min_sum을 넘으면 break
+    if current_sum >= min_sum:
+        return
     
-    # 숫자를 싹 순서대로 담은 arr
+
+    # 모든 행에서 하나씩 골랐으면 min_sum 갱신
+    if row == N:
+        min_sum = current_sum
+        return
+
+    # 0 ~ N-1 열까지,
+    for col in range(N):
+        # 아직 고르지 않은 열만 하나씩 골라서 재귀로 내려감
+        if not visited[col]:              # col열이 아직 선택 안 됐으면
+            visited[col] = True           # col열 선택 표시
+            sum_down(row + 1, current_sum + arr[row][col])  # 다음 행으로, 합계 갱신해서 재귀호출
+            visited[col] = False          # 함수 복귀 시, 선택 취소해서 다른 조합도 탐색하게 함
+
+    
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input())        # NxN 숫자 배열
     arr = []
     for _ in range(N):
-        # 들어오는 숫자 리스트를 하여 arr에 추가
-        nums = tuple(map(int, input().split()))
+        arr.append(list(map(int, input().split())))
 
-        arr.append(nums)
 
-    """
-    한줄로 받았으므로, 선택할 수 있는 인덱스는 다음과 같다
-    한 줄의 i
-    다음 줄의 j(i가 아닌)
-    그 다음 줄의 k(i, j가 아닌)
-
-    그렇다면?
-    i, j, k ...는 0 ~ N-1
-
-    즉 0부터 N-1까지 싹 순열시키면 됨
-
-    순열시키는 모듈이 있음
-    """
-    # 012345..N-1 문자열 만들기
-    N_list = ''.join([str(_) for _ in range(N)])
-    # 순열하기
-    lineups = map(''.join, itertools.permutations(N_list))
-    
-    # 최저합 ㅊ초기화
-    min_sum = 10000
-
-    # 순열 결과가 하나씩 나옴
-    for lineup in lineups:
-        current_sum = 0
-        # i번쨰 줄에서 택할 것들을 하나씩 더함
-        for i in range(N):
-            current_num = arr[i][int(lineup[i])]
-            current_sum += current_num
-
-            # 만약 이번 라인업에서 최저 sum을 이미 넘겨버렸다면 다음으로
-            if current_sum > min_sum:
-                break
-
-        if current_sum < min_sum:
-            min_sum = current_sum
-
+    min_sum = float('inf')    # 최소 합계 초기값
+    visited = [False] * N     # 각 열의 선택여부 리스트
+    sum_down(0, 0)            # 0행부터, 합계 0에서 시작
 
     print(f'#{tc} {min_sum}')
