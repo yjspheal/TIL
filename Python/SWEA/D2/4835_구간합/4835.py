@@ -20,8 +20,8 @@ for test_case in range(1, T + 1):
     _, M = map(int, input().split())
 
     digit_list = list(map(int, input().split()))
-    min_sum = 100 * 100 * 10000     # 초기값: 문제에서 주어진 sum값의 최대
-    max_sum = 0                     # 초기값: sum값 최저
+    min_sum = 100 * 100 * 10000     # 초기값: 문제에서 주어진 sum 값의 최대
+    max_sum = 0                     # 초기값: sum 값 최저
 
 
     for i in range(len(digit_list) - M + 1): # 마지막에서 M번째까지의 숫자를 선택해야하므로
