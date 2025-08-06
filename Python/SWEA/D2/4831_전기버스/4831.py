@@ -1,8 +1,8 @@
 # 4831. [파이썬 S/W 문제해결 기본] 1일차 - 전기버스
 
 # 온라인 저지에서는 stdin 사용 불가하므로 주석처리
-import sys
-sys.stdin = open("sample_input.txt", "r")
+# import sys
+# sys.stdin = open("sample_input.txt", "r")
 
 
 def count_charging_station(stations):
