@@ -1,11 +1,4 @@
-# 1966_숫자를정렬하자. 숫자를 정렬하자
-
-# 온라인 저지에서는 stdin 사용 불가하므로 주석처리
-# import sys
-#
-# # sys.stdin = open("sample_input.txt", "r")
-# sys.stdin = open("input.txt", "r")
-
+# 1966_숫자를정렬하자.
 
 def bubble_sort(arr, n):
     """

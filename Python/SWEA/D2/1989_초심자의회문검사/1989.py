@@ -1,4 +1,4 @@
-# 1989_초심자의회문검사. 초심자의 회문 검사
+# 1989_초심자의회문검사
 
 import sys
 sys.stdin = open("input.txt")
