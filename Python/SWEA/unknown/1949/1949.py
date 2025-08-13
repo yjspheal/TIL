@@ -1,4 +1,4 @@
-#
+# 등산로 조성
 
 import sys
 sys.stdin = open('')

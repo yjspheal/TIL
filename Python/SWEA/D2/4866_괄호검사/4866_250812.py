@@ -1,4 +1,4 @@
-# 4866. [파이썬 S/W 문제해결 기본] 4일차 - 괄호검사
+# 4866_괄호검사_new. [파이썬 S/W 문제해결 기본] 4일차 - 괄호검사
 
 # import sys
 # sys.stdin = open("sample_input.txt", "r")
