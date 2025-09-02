@@ -36,6 +36,7 @@
 | 27일 | [Web: 부트스트랩 기초](250827-web-bootstrap-basics.md) |
 | 28일 | [Web: MCP와 img/background-image 차이](250828-web-mcp-and-image-tags.md) |
 | 29일 | [Algorithm: 그래프 표현 (인접 행렬 vs 인접 리스트)](250829-algorithm-graph-representation.md) |
+| 31일 | [AI: MCP와 Playwright](250831-ai-mcp-playwright.md) |
 
 ### 🗓️ 2025년 9월
 
