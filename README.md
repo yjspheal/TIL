@@ -37,6 +37,12 @@
 | 28일 | [Web: MCP와 img/background-image 차이](250828-web-mcp-and-image-tags.md) |
 | 29일 | [Algorithm: 그래프 표현 (인접 행렬 vs 인접 리스트)](250829-algorithm-graph-representation.md) |
 
+### 🗓️ 2025년 9월
+
+| 날짜 | 주제 |
+| :--- | :--- |
+| 02일 | [Python: 연산 시간과 PyPy/Python3 차이](250902-python-operation-time-and-pypy.md) |
+
 ---
 
 꾸준함이 실력이다! 🚀
