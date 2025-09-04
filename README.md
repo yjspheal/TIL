@@ -43,6 +43,7 @@
 | 날짜 | 주제 |
 | :--- | :--- |
 | 02일 | [Python: 연산 시간과 PyPy/Python3 차이](250902-python-operation-time-and-pypy.md) |
+| 04일 | [Python: typing 모듈과 자료형 명시](250904-python-typing-module.md) |
 
 ---
 
