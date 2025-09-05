@@ -43,7 +43,9 @@
 | 날짜 | 주제 |
 | :--- | :--- |
 | 02일 | [Python: 연산 시간과 PyPy/Python3 차이](250902-python-operation-time-and-pypy.md) |
+| 03일 | [Algorithm: 다익스트라(Dijkstra) 알고리즘](250903-algorithm-dijkstra.md) |
 | 04일 | [Python: typing 모듈과 자료형 명시](250904-python-typing-module.md) |
+| 05일 | [Algorithm: 퀵 정렬(Quick Sort)](250905-algorithm-quick-sort.md) |
 
 ---
 
