@@ -46,6 +46,7 @@
 | 03일 | [Algorithm: 다익스트라(Dijkstra) 알고리즘](250903-algorithm-dijkstra.md) |
 | 04일 | [Python: typing 모듈과 자료형 명시](250904-python-typing-module.md) |
 | 05일 | [Algorithm: 퀵 정렬(Quick Sort)](250905-algorithm-quick-sort.md) |
+| 08일 | [Python: .sort() 심화 활용법](250908-python-sort-advanced.md) |
 
 ---
 
