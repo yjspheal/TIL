@@ -1,0 +1,149 @@
+# 로컬 MariaDB + HeidiSQL로 SQL 실습 시작하기 (Day 1)
+
+## 목차
+- [로컬 MariaDB + HeidiSQL로 SQL 실습 시작하기 (Day 1)](#로컬-mariadb--heidisql로-sql-실습-시작하기-day-1)
+  - [목차](#목차)
+  - [1. Day 1 목표](#1-day-1-목표)
+  - [2. 실습 환경](#2-실습-환경)
+  - [3. 데이터베이스 생성](#3-데이터베이스-생성)
+  - [4. 데이터베이스 선택](#4-데이터베이스-선택)
+  - [5. 이벤트 로그 테이블 생성](#5-이벤트-로그-테이블-생성)
+  - [6. 실습 중 헷갈렸던 포인트들](#6-실습-중-헷갈렸던-포인트들)
+    - [6-1. CREATE TABLE 내부 구분자](#6-1-create-table-내부-구분자)
+    - [6-2. INSERT 문법 착각](#6-2-insert-문법-착각)
+    - [6-3. SELECT 문법 착각](#6-3-select-문법-착각)
+  - [7. 데이터 삽입 및 조회](#7-데이터-삽입-및-조회)
+  - [8. Day 1 회고](#8-day-1-회고)
+  - [9. 다음 계획](#9-다음-계획)
+
+---
+
+## 1. Day 1 목표
+
+- 로컬 DB 서버 접속
+- 데이터베이스 생성
+- 테이블 설계
+- 데이터 INSERT 및 SELECT
+
+SQL의 기본 흐름을 **직접 손으로 익히는 것**을 목표로 한다
+
+---
+
+## 2. 실습 환경
+
+- OS: Windows
+- DB: MariaDB 10.11 (LTS)
+- Client: HeidiSQL
+- 로컬 서버
+
+---
+
+## 3. 데이터베이스 생성
+
+~~~~sql
+CREATE DATABASE sql_practice
+  DEFAULT CHARACTER SET utf8mb4
+  COLLATE utf8mb4_general_ci;
+~~~~
+
+동일한 명령을 다시 실행하며
+`database exists` 에러를 통해
+**이미 생성된 DB임을 확인했다**
+
+---
+
+## 4. 데이터베이스 선택
+
+~~~~sql
+USE sql_practice;
+~~~~
+
+---
+
+## 5. 이벤트 로그 테이블 생성
+
+~~~~sql
+CREATE TABLE event_logs (
+  user_id INT,
+  event_type VARCHAR(50),
+  event_time DATETIME,
+  device TEXT
+);
+~~~~
+
+로그 데이터 분석을 염두에 둔
+가장 단순한 이벤트 테이블 구조로 시작했다
+
+---
+
+## 6. 실습 중 헷갈렸던 포인트들
+
+### 6-1. CREATE TABLE 내부 구분자
+
+~~~~sql
+user_id INT;  -- ❌
+user_id INT,  -- ⭕
+~~~~
+
+- 컬럼 구분은 `,`
+- SQL 문 전체 종료는 `;`
+
+---
+
+### 6-2. INSERT 문법 착각
+
+~~~~sql
+INSERT TABLE event_logs -- ❌
+INSERT INTO event_logs  -- ⭕
+~~~~
+
+---
+
+### 6-3. SELECT 문법 착각
+
+~~~~sql
+SELECT TABLE event_logs *; -- ❌
+SELECT * FROM event_logs;  -- ⭕
+~~~~
+
+이 과정을 통해 SQL 문법 패턴이 명확해졌다
+
+~~~~
+CREATE TABLE  → 구조 정의
+INSERT INTO   → 데이터 삽입
+SELECT FROM   → 데이터 조회
+~~~~
+
+---
+
+## 7. 데이터 삽입 및 조회
+
+~~~~sql
+INSERT INTO event_logs
+VALUES (1, 'view', '2026-01-14 09:55:00', 'mobile');
+~~~~
+
+~~~~sql
+SELECT * FROM event_logs;
+~~~~
+
+데이터가 정상적으로 조회되는 것을 확인했다
+
+---
+
+## 8. Day 1 회고
+
+- SQL은 문법보다 **구조와 흐름**
+- 에러 메시지를 읽는 능력이 중요
+- DB → Table → Data 단계가 명확해짐
+
+작은 문법 실수를 직접 고쳐보는 과정이
+실제 운영 환경에서의 문제 해결 감각과 연결된다고 느꼈다
+
+---
+
+## 9. 다음 계획
+
+- WHERE 조건 조회
+- ORDER BY 정렬
+- LIMIT 제한
