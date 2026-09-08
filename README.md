@@ -63,17 +63,17 @@
 | :--- | :--- |
 | - | 학습 기록이 없습니다. |
 
-## Information Processing Engineer
+## 2026 Engineer Information Processing
 
 2026년 정보처리기사 실기 준비
 
-- [SQL](./InformationProcessingEngineer/SQL/)
-- [Programming](./InformationProcessingEngineer/Programming/)
-- [Database](./InformationProcessingEngineer/Database/)
-- [Software Engineering](./InformationProcessingEngineer/SoftwareEngineering/)
-- [Network](./InformationProcessingEngineer/Network/)
-- [Security](./InformationProcessingEngineer/Security/)
-- [Error Note](./InformationProcessingEngineer/ErrorNote/)
+- [SQL](./2026_EngineerInformationProcessing/SQL/)
+- [Programming](./2026_EngineerInformationProcessing/Programming/)
+- [Database](./2026_EngineerInformationProcessing/Database/)
+- [Software Engineering](./2026_EngineerInformationProcessing/SoftwareEngineering/)
+- [Network](./2026_EngineerInformationProcessing/Network/)
+- [Security](./2026_EngineerInformationProcessing/Security/)
+- [Error Note](./2026_EngineerInformationProcessing/ErrorNote/)
 
 ---
 
