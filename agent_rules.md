@@ -1,4 +1,4 @@
-﻿# TIL Repository Agent Rules
+# TIL Repository Agent Rules
 
 ## Language
 
@@ -6,11 +6,11 @@
 
 ## Repository structure
 
-- 저장소 최상위 학습 분야 디렉터리: `Python/`, `SQL/`, `Algorithm/`, `Web/`, `AI/`, `InformationProcessingEngineer/`
+- 저장소 최상위 학습 분야 디렉터리: `Python/`, `SQL/`, `Algorithm/`, `Web/`, `AI/`, `2026_EngineerInformationProcessing/`
 - 기존 학습 파일은 주제에 맞는 최상위 디렉터리로 관리한다. 파일명과 내용은 변경하지 않는다
-- 정보처리기사 학습 자료만 `InformationProcessingEngineer/` 아래에 작성한다
+- 정보처리기사 학습 자료만 `2026_EngineerInformationProcessing/` 아래에 작성한다
 - 정보처리기사 하위 디렉터리: `SQL/`, `Programming/`, `Database/`, `SoftwareEngineering/`, `Network/`, `Security/`, `ErrorNote/`
-- 기존 SQL 학습 기록은 `SQL/`에 보존하며 `InformationProcessingEngineer/SQL/`로 옮기지 않는다
+- 기존 SQL 학습 기록은 `SQL/`에 보존하며 `2026_EngineerInformationProcessing/SQL/`로 옮기지 않는다
 - 새 정보처리기사 TIL은 주제에 맞는 하위 디렉터리에만 추가한다. 불필요한 파일이나 디렉터리를 만들지 않는다
 
 ## Existing TIL preservation

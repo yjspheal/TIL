@@ -1,0 +1,187 @@
+# TIL Repository 구조 개편 명세서
+
+## 1. 작업 목적
+
+기존 `TIL` GitHub Repository에 2026년 정보처리기사 실기 학습 기록을 추가할 예정이다.
+
+기존 TIL 기록은 그대로 보존하면서, 앞으로 작성할 학습 내용을 주제별 디렉토리로 관리할 수 있도록 Repository 구조를 정리한다.
+
+Repository의 최상위 디렉토리는 **학습 주제 단위로 병렬 구성**한다.
+
+---
+
+## 2. 대상 Repository
+
+* Repository: `yjspheal/TIL`
+* 기본 브랜치: `master`
+
+현재 Repository는 날짜 + 주제 형식의 Markdown 파일을 중심으로 TIL을 기록하고 있다.
+
+예시:
+
+* `250721-python-f-string-advanced.md`
+* `250903-algorithm-dijkstra.md`
+* `250904-python-typing-module.md`
+* `260112-SQL-Day1.md`
+
+**기존 파일의 작성 방식과 기록은 최대한 보존한다.**
+
+---
+
+## 3. 최종 디렉토리 구조
+
+최상위 구조는 다음과 같이 구성한다.
+
+```text
+TIL/
+├── InformationProcessingEngineer/
+├── Python/
+├── SQL/
+├── Algorithm/
+├── Web/
+├── AI/
+└── README.md
+```
+
+### InformationProcessingEngineer
+
+정보처리기사 실기 학습 내용을 저장한다.
+
+```text
+InformationProcessingEngineer/
+├── SQL/
+├── Programming/
+├── Database/
+├── SoftwareEngineering/
+├── Network/
+├── Security/
+└── ErrorNote/
+```
+
+각 디렉토리의 목적은 다음과 같다.
+
+* `SQL/`: SQL 문법 및 정보처리기사 SQL 문제
+* `Programming/`: C, Java, Python 등 프로그래밍 문제
+* `Database/`: 데이터베이스 이론
+* `SoftwareEngineering/`: 소프트웨어 공학, UML, 디자인 패턴, 테스트 등
+* `Network/`: 네트워크 관련 이론
+* `Security/`: 정보보안 관련 이론
+* `ErrorNote/`: 반복적으로 틀리는 문제 및 시험 직전 복습용 오답 정리
+
+---
+
+## 4. 기존 파일 처리 원칙
+
+### 반드시 지킬 것
+
+**기존 TIL 파일을 임의로 삭제하거나 내용을 변경하지 않는다.**
+
+특히 기존에 작성된 다음과 같은 파일은 그대로 유지한다.
+
+```text
+260112-SQL-Day1.md
+260114-SQL-Day2.md
+260117-SQL-Day3.md
+260119-SQL-Day4.md
+260124-SQL-Day5.md
+260131-SQL-Day6.md
+```
+
+이 파일들은 과거 SQL 학습 기록이므로 `InformationProcessingEngineer/SQL/`로 이동하지 않는다.
+
+기존 파일의 위치, 파일명, 내용은 변경하지 않는다.
+
+---
+
+## 5. 앞으로 작성할 정보처리기사 TIL
+
+2026년 9월부터 새롭게 작성하는 정보처리기사 관련 학습 기록은 `InformationProcessingEngineer/` 아래에 작성한다.
+
+예:
+
+```text
+InformationProcessingEngineer/
+├── SQL/
+│   ├── 260907-select.md
+│   ├── 260908-where.md
+│   ├── 260909-group-by.md
+│   └── 260910-join.md
+│
+├── Programming/
+│   ├── 260921-c-basic.md
+│   └── 260922-java-basic.md
+│
+└── Database/
+    ├── 260924-key.md
+    └── 260925-normalization.md
+```
+
+파일명은 기존 TIL의 스타일을 참고하여 **`YYMMDD-topic.md` 형식**을 기본으로 한다.
+
+---
+
+## 6. README 수정
+
+기존 `README.md`의 내용을 임의로 삭제하거나 전면 개편하지 않는다.
+
+현재 README의 스타일과 구조를 유지하면서, 정보처리기사 학습 영역을 확인할 수 있는 항목을 추가한다.
+
+예:
+
+```markdown
+## Information Processing Engineer
+
+2026년 정보처리기사 실기 준비
+
+- [SQL](./InformationProcessingEngineer/SQL/)
+- [Programming](./InformationProcessingEngineer/Programming/)
+- [Database](./InformationProcessingEngineer/Database/)
+- [Software Engineering](./InformationProcessingEngineer/SoftwareEngineering/)
+- [Network](./InformationProcessingEngineer/Network/)
+- [Security](./InformationProcessingEngineer/Security/)
+- [Error Note](./InformationProcessingEngineer/ErrorNote/)
+```
+
+단, 실제 README의 기존 형식을 먼저 확인한 후 **기존 문체와 Markdown 스타일에 맞춰 자연스럽게 추가한다.**
+
+---
+
+## 7. 작업 시 주의사항
+
+1. 기존 TIL 파일을 삭제하지 않는다.
+2. 기존 TIL 파일의 내용을 임의로 수정하지 않는다.
+3. 기존 SQL 학습 기록을 정보처리기사 폴더로 이동하지 않는다.
+4. 정보처리기사 학습용 디렉토리만 새롭게 생성한다.
+5. 기존 Repository의 파일명 규칙과 Markdown 작성 스타일을 최대한 유지한다.
+6. 불필요한 파일이나 디렉토리를 생성하지 않는다.
+7. README는 기존 내용을 보존하면서 필요한 정보만 추가한다.
+8. 모든 변경사항을 작업 후 확인한다.
+9. 변경 전후의 Git diff를 확인하여 기존 학습 기록이 변경되지 않았는지 검증한다.
+
+---
+
+## 8. 작업 완료 후 확인사항
+
+최종적으로 다음 구조가 존재하는지 확인한다.
+
+```text
+TIL/
+├── InformationProcessingEngineer/
+│   ├── SQL/
+│   ├── Programming/
+│   ├── Database/
+│   ├── SoftwareEngineering/
+│   ├── Network/
+│   ├── Security/
+│   └── ErrorNote/
+├── Python/
+├── SQL/
+├── Algorithm/
+├── Web/
+├── AI/
+└── README.md
+```
+
+그리고 기존 TIL 파일들이 삭제되거나 의도치 않게 수정되지 않았는지 확인한다.
+
+**핵심 원칙: 기존 TIL은 보존하고, 앞으로의 정보처리기사 학습 기록만 새로운 디렉토리 구조에서 관리한다.**
