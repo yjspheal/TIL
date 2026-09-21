@@ -63,17 +63,18 @@
 | :--- | :--- |
 | - | 학습 기록이 없습니다. |
 
-## 2026 Engineer Information Processing
+## 2026 정보처리기사 실기
 
-2026년 정보처리기사 실기 준비
+2026년 정기 기사 3회 실기 대비 학습 기록입니다.
 
-- [SQL](./2026_EngineerInformationProcessing/SQL/)
-- [Programming](./2026_EngineerInformationProcessing/Programming/)
-- [Database](./2026_EngineerInformationProcessing/Database/)
-- [Software Engineering](./2026_EngineerInformationProcessing/SoftwareEngineering/)
-- [Network](./2026_EngineerInformationProcessing/Network/)
-- [Security](./2026_EngineerInformationProcessing/Security/)
-- [Error Note](./2026_EngineerInformationProcessing/ErrorNote/)
+- [정보처리기사 학습 기록](./2026_InformationProcessingEngineer/)
+- [공부 계획](./2026_InformationProcessingEngineer/plan.md)
+
+### 학습 주제
+
+- SQL: 기본 조회, 조건, 집계 함수, `GROUP BY`, `HAVING`, `JOIN`, 서브쿼리
+- C: 포인터, 배열, 함수, 문자열, 구조체, 재귀, 비트 연산
+- Java: 변수, 클래스, 상속, 다형성, 접근 제어, 예외 처리, 컬렉션
 
 ---
 
